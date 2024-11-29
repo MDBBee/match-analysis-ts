@@ -8,4 +8,13 @@ const matches = fs_1.default
     .readFileSync('football.csv', { encoding: 'utf-8' })
     .split('\n')
     .map((row) => row.split(','));
-console.log(matches);
+let manUnitedWins = 0;
+// [['29/10/2018', 'Tottenham', 'Man City', '0', '1', 'A', 'K Friend']];
+for (let match of matches) {
+    if (match[1] === 'Man United' && match[5] === 'H') {
+        manUnitedWins++;
+    }
+    else if (match[2] === 'Man United' && match[5] === 'A') {
+        manUnitedWins++;
+    }
+}

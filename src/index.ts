@@ -5,4 +5,13 @@ const matches = fs
   .split('\n')
   .map((row: string): string[] => row.split(','));
 
-console.log(matches);
+let manUnitedWins = 0;
+
+// [['29/10/2018', 'Tottenham', 'Man City', '0', '1', 'A', 'K Friend']];
+for (let match of matches) {
+  if (match[1] === 'Man United' && match[5] === 'H') {
+    manUnitedWins++;
+  } else if (match[2] === 'Man United' && match[5] === 'A') {
+    manUnitedWins++;
+  }
+}
