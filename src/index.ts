@@ -5,6 +5,7 @@ reader.read();
 
 let manUnitedWins = 0;
 
+console.log(reader);
 // [['29/10/2018', 'Tottenham', 'Man City', '0', '1', 'A', 'K Friend']];
 for (let match of reader.data) {
   if (match[1] === 'Man United' && match[5] === 'H') {
@@ -14,4 +15,10 @@ for (let match of reader.data) {
   }
 }
 
-console.log(manUnitedWins);
+// export enum MatchResults {
+//   HomeWin = 'H',
+//   AwayWin = 'A',
+//   Draw = 'D',
+// }
+
+// console.log(MatchResults.HomeWin);
