@@ -14,9 +14,9 @@ class CsvFileReader {
         this.data = fs_1.default
             .readFileSync(this.filename, { encoding: 'utf-8' })
             .split('\n')
-            .map((row) => row.split(','));
+            .map((row) => row.split(','))
+            .map(this.mapRow);
     }
 }
 exports.CsvFileReader = CsvFileReader;
 // [['29/10/2018', 'Tottenham', 'Man City', '0', '1', 'A', 'K Friend']];
-//to read, parse and store data into a [[],[]]

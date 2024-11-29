@@ -1,13 +1,13 @@
+import { MatchReader } from './MatchReader';
 import { CsvFileReader } from './CsvFileReader';
-
-const reader = new CsvFileReader('football.csv');
-reader.read();
 
 let manUnitedWins = 0;
 
-console.log(reader);
-// [['29/10/2018', 'Tottenham', 'Man City', '0', '1', 'A', 'K Friend']];
-for (let match of reader.data) {
+const readerCSV = new CsvFileReader('football.csv');
+const reader = new MatchReader(readerCSV);
+reader.load();
+
+for (let match of reader.matches) {
   if (match[1] === 'Man United' && match[5] === 'H') {
     manUnitedWins++;
   } else if (match[2] === 'Man United' && match[5] === 'A') {
@@ -15,10 +15,4 @@ for (let match of reader.data) {
   }
 }
 
-// export enum MatchResults {
-//   HomeWin = 'H',
-//   AwayWin = 'A',
-//   Draw = 'D',
-// }
-
-// console.log(MatchResults.HomeWin);
+console.log(manUnitedWins);
