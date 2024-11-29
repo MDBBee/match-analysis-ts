@@ -15,4 +15,4 @@ export class CsvFileReader {
 
 // [['29/10/2018', 'Tottenham', 'Man City', '0', '1', 'A', 'K Friend']];
 
-//to read, parse and store data into a [[],[]]
+//Creat the class structure for implementing the interface, to read, parse and store data into a [[],[]]
